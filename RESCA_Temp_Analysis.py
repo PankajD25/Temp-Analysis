@@ -219,10 +219,18 @@ if uploaded_file is not None:
     df = df111
     if df is not None:
         file_name = st.text_input('Weekly Temp Report')
-        download = st.download_button(label='Download Excel', data=df.to_excel(index=False, header=True),key='download',writer='excel_writer')
+        download = st.download_button(label='Download Excel', data=df.to_excel(index=False, header=True,engine='xlsxwriter'),key='download')
 
     if file_name and download:
         with open(file_name, "wb") as f:
             f.write(download)
         st.success(f"File '{file_name}' has been downloaded successfully.")
+
+# y=os.path.basename(os.path.normpath(path))
+# new_path = r"C:\Users\Colleen\Documents\\"+y
+# writer = pd.ExcelWriter(new_path, engine='xlsxwriter')
+# df.to_excel(writer)
+
+
+
 
