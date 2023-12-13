@@ -215,3 +215,14 @@ if uploaded_file is not None:
      
     df111 = pd.read_excel("weekly temp report.xlsx")
     st.write(df111)
+
+
+if df is not None:
+file_name = st.text_input('Weekly Temp Report')
+download = st.download_button(label='Download Excel', data=df111.to_excel(index=False, header=True), key='download')
+
+if file_name and download:
+    with open(file_name, "wb") as f:
+        f.write(download)
+    st.success(f"File '{file_name}' has been downloaded successfully.")
+
