@@ -217,20 +217,28 @@ if uploaded_file is not None:
     st.write(df111)
 
     df = df111
-    if df is not None:
-        file_name = st.text_input('Weekly Temp Report')
-        download = st.download_button(label='Download Excel',data=df.to_excel(excel_writer,index=False, header=True),key='download')
+    
 
-    if file_name and download:
-        with open(file_name, "wb") as f:
-            f.write(download)
-        st.success(f"File '{file_name}' has been downloaded successfully.")
+@st.cache
 
-# y=os.path.basename(os.path.normpath(path))
-# new_path = r"C:\Users\Colleen\Documents\\"+y
-# writer = pd.ExcelWriter(new_path, engine='xlsxwriter')
-# df.to_excel(writer)
+def convert_df(df):
+
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+
+    return df.to_csv().encode('utf-8')
 
 
 
+#converting the sample dataframe
+
+csv = convert_df(df)
+
+
+
+#adding a download button to download csv file
+
+st.download_button(label="Download data as CSV",
+                   data=csv,
+                   file_name='Weekly Temp data.csv',
+                   mime='text/csv',)
 
