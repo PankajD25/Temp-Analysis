@@ -239,6 +239,5 @@ if uploaded_file is not None:
     
     st.download_button(label="Download data as Excel,
                        data=csv,
-                       file_name='Weekly Temp data.xlsx',
-                       mime='xlsx',)
+                       file_name='Weekly Temp data.xlsx')
 
