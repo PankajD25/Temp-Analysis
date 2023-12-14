@@ -219,26 +219,26 @@ if uploaded_file is not None:
     df = df111
     
 
-@st.cache
-
-def convert_df(df):
-
-    # IMPORTANT: Cache the conversion to prevent computation on every rerun
-
-    return df.to_csv().encode('utf-8')
-
-
-
-#converting the sample dataframe
-
-csv = convert_df(df)
-
-
-
-#adding a download button to download csv file
-
-st.download_button(label="Download data as CSV",
-                   data=csv,
-                   file_name='Weekly Temp data.csv',
-                   mime='text/csv',)
+    @st.cache
+    
+    def convert_df(df):
+    
+        # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    
+        return df.to_csv().encode('utf-8')
+    
+    
+    
+    #converting the sample dataframe
+    
+    csv = convert_df(df)
+    
+    
+    
+    #adding a download button to download csv file
+    
+    st.download_button(label="Download data as CSV",
+                       data=csv,
+                       file_name='Weekly Temp data.csv',
+                       mime='text/csv',)
 
