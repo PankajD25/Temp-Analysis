@@ -216,16 +216,16 @@ if uploaded_file is not None:
     df111 = pd.read_excel("weekly temp report.xlsx")
     st.write(df111)
 
-    df = df111
+    
     
 
     @st.cache
     
-    def convert_df(df):
+    def convert_df(df111):
     
         # IMPORTANT: Cache the conversion to prevent computation on every rerun
     
-        return df.to_csv().encode('utf-8')
+        return df111.to_excel().encode('utf-8')
     
     
     
@@ -237,8 +237,8 @@ if uploaded_file is not None:
     
     #adding a download button to download csv file
     
-    st.download_button(label="Download data as CSV",
+    st.download_button(label="Download data as Excel,
                        data=csv,
-                       file_name='Weekly Temp data.csv',
-                       mime='text/csv',)
+                       file_name='Weekly Temp data.xlsx',
+                       mime='xlsx',)
 
