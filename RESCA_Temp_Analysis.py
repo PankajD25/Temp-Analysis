@@ -221,23 +221,21 @@ if uploaded_file is not None:
 
     @st.cache
     
-    def convert_df(df111):
+    def convert_df(df):
     
         # IMPORTANT: Cache the conversion to prevent computation on every rerun
     
-        return df111.to_excel().encode('utf-8')
+        return df.to_excel().encode('utf-8')
     
     
     
     #converting the sample dataframe
     
-    csv = convert_df(df)
+    csv = convert_df(df111)
     
     
     
     #adding a download button to download csv file
     
-    st.download_button(label="Download data as Excel,
-                       data=csv,
-                       file_name='Weekly Temp data.xlsx')
+    st.download_button(label="Download data as Excel",data=csv,file_name='Weekly Temp data.xlsx')
 
