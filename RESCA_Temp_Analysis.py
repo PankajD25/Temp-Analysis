@@ -225,7 +225,7 @@ if uploaded_file is not None:
     
         # IMPORTANT: Cache the conversion to prevent computation on every rerun
     
-        return df.to_excel().encode('utf-8')
+        return df.to_excel(engine='xlsxwriter').encode('utf-8')
     
     
     
