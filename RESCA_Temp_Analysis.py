@@ -19,7 +19,7 @@ st.set_page_config(layout="wide")
 html_temp = """
     <header style="font-size:10px;width=60">
     <div style ="background-color:lightgreen;border-style:solid">
-    <img src="https://renom.in/wp-content/uploads/2022/02/cropped-renom-logo.86b197ce-e1644472068111-1.png" style="float:Right;width:200px;height:70px;border:orange; border-width:10px; border-style:solid;">
+    <img src="https://www.renom.in/wp-content/uploads/2022/02/cropped-cropped-renom-logo.86b197ce.png" style="float:Right;width:300px;height:100px;border:orange; border-width:10px; border-style:solid;">
     <h2 style ="color:black;text-align:center;">RESCA Temperature Analysis</h1>
     <h4 style ="color:black;text-align:center;"> Renom Energy Services Pvt Ltd </h3>
     </header>
